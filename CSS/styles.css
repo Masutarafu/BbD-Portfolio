@@ -99,16 +99,25 @@ nav {
   transition: background var(--transition), border-color var(--transition);
 }
 
+
+
 [data-theme="light"] nav {
   background: rgba(244,245,249,0.82);
 }
 
+.nav-logo-div {
+  
+}
 .nav-logo {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-  color: var(--accent);
+  /* font-family: 'Syne', sans-serif; */
+  /* font-weight: 800; */
+  /* font-size: 1.1rem; */
+  /* letter-spacing: -0.02em; */
+  /* color: var(--accent); */
+  width: 4%; height: 80%;
+  /* object-fit: cover; */
+  /* display: none; */
+
 }
 
 .nav-links {
@@ -374,7 +383,7 @@ section {
 .hero-avatar-placeholder {
   position: absolute;
   top: 2.5rem;
-  width: 110px; height: 110px;
+  width: 250px; height: 250px;
   border-radius: 50%;
   border: 3px solid var(--accent);
   background: var(--bg-hover);
@@ -943,7 +952,11 @@ footer {
 /* ─────────────────────────────────────────
    RESPONSIVE — MOBILE (≤ 640px)
 ───────────────────────────────────────── */
-@media (max-width: 640px) {
+@media (max-width: 480px) {
+  html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
   /* ── Global section padding ── */
   section {
@@ -983,10 +996,16 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+  /* .btn-primary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  } */
   .btn-primary,
   .btn-outline {
     width: 100%;
     text-align: center;
+    padding: 0.75rem 1rem; /* Reduced from 1.8rem to prevent text/padding overflow */
   }
 
   /* ── Section headings ── */
@@ -1058,8 +1077,12 @@ footer {
     font-size: 0.76rem;
     word-break: break-all;
   }
-  .form-row {
+  /* .form-row {
     grid-template-columns: 1fr;
+  } */
+  .form-row {
+    grid-template-columns: 1fr; /* Stacks First Name and Last Name vertically */
+    gap: 1rem;
   }
   .contact-form .btn-primary {
     width: 100%;
