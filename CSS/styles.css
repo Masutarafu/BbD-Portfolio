@@ -105,18 +105,19 @@ nav {
   background: rgba(244,245,249,0.82);
 }
 
-.nav-logo-div {
+/* .nav-logo-div {
   
-}
+} */
+
 .nav-logo {
-  /* font-family: 'Syne', sans-serif; */
-  /* font-weight: 800; */
-  /* font-size: 1.1rem; */
-  /* letter-spacing: -0.02em; */
-  /* color: var(--accent); */
-  width: 4%; height: 80%;
-  /* object-fit: cover; */
-  /* display: none; */
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  /* width: 100%; height: 100%;
+  object-fit: cover;
+  display: none; */
 
 }
 
@@ -237,11 +238,20 @@ section {
 /* ─────────────────────────────────────────
    HERO
 ───────────────────────────────────────── */
-#hero {
+/* #hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  align-items: center;
+  padding-top: 100px;
+} */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  /* Protects columns from expanding past their boundaries */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: clamp(1.5rem, 4vw, 4rem); /* Fluid gap that shrinks on smaller laptops */
   align-items: center;
   padding-top: 100px;
 }
